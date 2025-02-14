@@ -1,0 +1,51 @@
+
+h1{
+text-align: center;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: rgb(0, 0, 0);
+}
+
+
+h3{
+text-align: center;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+color: rgb(0, 0, 0);
+}
+body{
+ 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.empezar{
+text-align: center;
+font-family: 'Courier New', Courier, monospace;
+cursor: pointer;
+color: rgb(255, 0, 0);
+
+}
+.espadas{
+display: flex;
+justify-content: center;
+
+top: 50%;
+
+}
+
+.youwin{
+display: flex;
+justify-content: center;
+
+
+}
+
+.gameover{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.hasganado{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}

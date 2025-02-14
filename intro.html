@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+       
+        <title>PIEDRA PAPEL O TIJERA (alfa)</title>
+        <link rel="stylesheet" href="ppt.css">
+        <script language="JavaScript">
+
+            // 0. Array de opcciones
+            
+            let sonidoVictoria = new Audio("./sonidos/ganador.mp3");
+            let sonidoDerrota = new Audio("./sonidos/perdedor.mp3");
+            let sonidoEmpate = new Audio("./sonidos/empate.mp3");
+            let sonidoFondo = new Audio("./sonidos/fondo.mp3");
+            function pajaros(){
+                sonidoFondo.play();
+            }
+        
+            function Empezar(){
+            // 1. Iniciar el juego
+                
+                alert("INICIA EL JUEGO");
+                alert("¡ELIGE TU ATAQUE!");
+            //2. Elegir ataque del jugador
+                let player= prompt("Escribe PIEDRA, PAPEL O TIJERA (En mayúsculas)");
+
+                if(player == "PIEDRA") {
+                    alert("ELEGISTE PIEDRA");
+
+                } else if (player == "PAPEL") {
+                    alert("ELEGISTE PAPEL");
+
+                } else if (player == "TIJERA") {
+                    alert("ELEGISTE TIJERA");
+                }
+                
+                
+            // 3. Elegir ataque ALEATORIO del enemigo
+                let enemy = Math.floor(Math.random()*2);
+
+                if(enemy == 0) {
+                    alert("EL ENEMIGO ELIGIO PIEDRA");
+
+                } else if (enemy == 1) {
+                    alert("EL ENEMIGO ELIGIO PAPEL");
+
+                } else if (enemy == 2) {
+                    alert("EL ENEMIGO ELIGIO PIEDRA");
+                }
+
+
+            // 4. Mostrar el resultado
+                if(player == "PIEDRA" &&  enemy == 0) {
+                    sonidoEmpate.play();    alert("💥EMPATE💥¡INTENTALO DE NUEVO!");
+                }
+                else if(player == "PAPEL" && enemy == 1){
+
+                    sonidoEmpate.play();   alert("💥EMPATE💥 ¡INTENTALO DE NUEVO!");
+                }
+                else if(player == "TIJERA" && enemy == 2){
+
+                    sonidoEmpate.play();    alert("💥EMPATE💥 ¡INTENTALO DE NUEVO!");
+                }   
+                 else if(player == "PIEDRA" && enemy == 2){
+
+                    sonidoVictoria.play();  alert("¡HAS GANADO! 🏆"); location.href="victoria.html";
+                }
+                
+                else if( player == "PIEDRA" && enemy == 1){
+
+                    sonidoDerrota.play();   alert(" HAS PERDIDO"); location.href="derrota.html";
+
+                } else if(player == "PAPEL" && enemy == 0){
+
+                    sonidoVictoria.play();  alert("¡HAS GANADO! 🏆"); location.href="victoria.html";
+                }
+                else if(player == "PAPEL" && enemy == 2){
+
+                    sonidoDerrota.play();   alert("HAS PERDIDO"); location.href="derrota.html";
+
+                }else if(player == "TIJERA" && enemy == 0){
+
+                    sonidoDerrota.play();   alert("HAS PERDIDO"); location.href="derrota.html";
+
+                }else if(player == "TIJERA" && enemy == 1){
+
+                    sonidoVictoria.play();  alert("¡HAS GANADO! 🏆"); location.href="victoria.html";
+                }
+            } 
+        </script>
+            </head>
+            <body  onload="pajaros()" background="./imagenes/fondo.jpeg"> 
+          
+               
+                <div>
+                    <h1>PIEDRA PAPEL O TIJERA</h1>
+                    <h3>El juego</h3>
+                </div>
+                <div class="botonempezar">
+                <h1 onclick="Empezar()" class="empezar" >Empezar el duelo</h1>
+                </div>
+            </body>
+        </html>
